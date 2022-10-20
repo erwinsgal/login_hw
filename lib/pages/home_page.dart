@@ -1,5 +1,6 @@
 import 'dart:developer';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,6 +16,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final ButtonStyle style = ElevatedButton.styleFrom(
+      minimumSize: const Size(150, 70),
+      primary: Colors.white,
+      textStyle: const TextStyle(fontSize: 20, color: Colors.purple, fontWeight: FontWeight.w400)
+    );
     return Scaffold(
       body: Center(
         child: Container(
@@ -26,88 +32,26 @@ class _HomePageState extends State<HomePage> {
                 )),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Padding(
-                  padding: EdgeInsets.all(7),
-                  child: Text(
-                    'WELCOME!',
-                    style: TextStyle(fontSize: 35, color: Colors.purple, fontWeight: FontWeight.bold),
-                  ),
-                ),
-                LoginBox()
+              children: [
+                ElevatedButton(
+                    style: style,
+                    onPressed: () async {
+                  await context.setLocale(Locale('ru'));
+                }, child: Text("Русский", style: TextStyle(color: Colors.purple, fontFamily: 'Montserrat'),)),
+                SizedBox(height: 20,),
+                ElevatedButton(
+                    style: style,
+                    onPressed: () async {
+                  await context.setLocale(Locale('kk'));
+                }, child: Text("Қазақша", style: TextStyle(color: Colors.purple, fontFamily: 'Montserrat'),)),
+                SizedBox(height: 20,),
+                ElevatedButton(
+                    style: style,
+                    onPressed: () async {
+                  await context.setLocale(Locale('en'));
+                }, child: Text("English", style: TextStyle(color: Colors.purple, fontFamily: 'Montserrat'),)),
               ],
             )),
-      ),
-    );
-  }
-}
-
-class LoginBox extends StatelessWidget {
-  const LoginBox({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      height: 300,
-      decoration: const BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(15)),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SizedBox(height: 50),
-          const Padding(
-            padding: EdgeInsets.only(left: 25, top: 0, right: 25, bottom: 8),
-            child: TextField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.mail),
-                border: OutlineInputBorder(),
-                hintText: 'Username / Email',
-              ),
-            ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 25, top: 0, right: 25, bottom: 8),
-            child: TextField(
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.key),
-                border: OutlineInputBorder(),
-                hintText: 'Password',
-              ),
-            ),
-          ),
-          Center(
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-
-              onPressed: () {},
-              child: const Text('Sign In'),
-            ),
-          ),
-          Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("Don't have an Account?"),
-                TextButton(
-                    style: TextButton.styleFrom(
-                        primary: Colors.purple
-                    ),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/registerPage');
-                    },
-                    child: const Text('Sign Up'))
-              ],
-            ),
-          )
-        ],
       ),
     );
   }

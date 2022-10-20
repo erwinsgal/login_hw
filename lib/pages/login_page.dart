@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:login_page_hw/pages/register_page.dart';
 
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
+//
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       routes: {
+//         '/login': (context) => const FirstPage(),
+//         '/register': (context) => const SecondPage()
+//       },
+//     );
+//   }
+// }
+//
+// class FirstPage extends StatelessWidget {
+//   const FirstPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +40,14 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(fontSize: 35, color: Colors.purple, fontWeight: FontWeight.bold),
                   ),
                 ),
-                LoginBox()
+                RegisterBox()
               ],
             )),
       ),
     );
   }
 }
+
 
 class LoginBox extends StatelessWidget {
   const LoginBox({Key? key}) : super(key: key);
@@ -72,12 +88,10 @@ class LoginBox extends StatelessWidget {
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
               ),
-
               onPressed: () {},
               child: const Text('Sign In'),
             ),
@@ -88,11 +102,8 @@ class LoginBox extends StatelessWidget {
               children: [
                 const Text("Don't have an Account?"),
                 TextButton(
-                  style: TextButton.styleFrom(
-                    primary: Colors.purple
-                  ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/registerPage');
+                      Navigator.pushNamed(context, '/register');
                     },
                     child: const Text('Sign Up'))
               ],
@@ -103,3 +114,4 @@ class LoginBox extends StatelessWidget {
     );
   }
 }
+
