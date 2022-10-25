@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:login_page_hw/pages/home_page.dart';
 import 'package:login_page_hw/pages/login_page.dart';
 import 'package:login_page_hw/pages/register_page.dart';
-//
+
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   await EasyLocalization.ensureInitialized();
 //   runApp(
 //       EasyLocalization(
+//
 //           supportedLocales: [Locale('kk'), Locale('en'), Locale('ru')],
 //           fallbackLocale: Locale('kk'),
 //           path: 'assets/translations',
@@ -25,6 +26,7 @@ import 'package:login_page_hw/pages/register_page.dart';
 //     return MaterialApp(
 //       localizationsDelegates: context.localizationDelegates,
 //       supportedLocales: context.supportedLocales,
+//       locale: context.locale,
 //       title: 'Flutter Demo',
 //       theme: ThemeData(
 //         primarySwatch: Colors.blue,
@@ -33,6 +35,8 @@ import 'package:login_page_hw/pages/register_page.dart';
 //     );
 //   }
 // }
+//
+
 
 void main() {
   runApp(const MyApp());
@@ -48,7 +52,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }

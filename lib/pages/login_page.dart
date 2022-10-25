@@ -40,7 +40,7 @@ class LoginPage extends StatelessWidget {
                     style: TextStyle(fontSize: 35, color: Colors.purple, fontWeight: FontWeight.bold),
                   ),
                 ),
-                RegisterBox()
+                LoginBox()
               ],
             )),
       ),
@@ -56,7 +56,7 @@ class LoginBox extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 300,
-      height: 300,
+      height: 270,
       decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -64,7 +64,7 @@ class LoginBox extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 50),
+          const SizedBox(height: 30),
           const Padding(
             padding: EdgeInsets.only(left: 25, top: 0, right: 25, bottom: 8),
             child: TextField(

@@ -1,0 +1,11 @@
+{
+  "register": "ТІРКЕЛУ",
+  "inputusername": "Есімі/ Email",
+  "inputphone": "Телефон нөмірі",
+  "inputpassword": "Құпия сөз",
+  "buttonSubmit": "Тіркелу",
+  "haveacc": "Аккаунт бар ма?",
+  "buttonSign": "Кіру",
+  "welcome": "ҚОШ КЕЛДІҢІЗ!",
+  "noAcc": "Аккаунт жоқ па?"
+}
