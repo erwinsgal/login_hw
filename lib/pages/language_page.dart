@@ -3,18 +3,19 @@ import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:login_page_hw/pages/login_page.dart';
 import 'package:login_page_hw/pages/register_page.dart';
 
 import '../model/user.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+class LanguagePage extends StatefulWidget {
+  const LanguagePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<LanguagePage> createState() => _LanguagePage();
 }
 
-class _HomePageState extends State<HomePage> {
+class _LanguagePage extends State<LanguagePage> {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style = ElevatedButton.styleFrom(
@@ -41,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RegisterPage(),
+                          builder: (context) => LoginPage(),
                         ),
                       );
                     },
@@ -60,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RegisterPage(),
+                          builder: (context) => LoginPage(),
                         ),
                       );
                     },
@@ -79,7 +80,7 @@ class _HomePageState extends State<HomePage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => RegisterPage(),
+                          builder: (context) => LoginPage(),
                         ),
                       );
                     },

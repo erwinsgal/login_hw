@@ -1,9 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:login_page_hw/pages/main_page.dart';
 import 'package:login_page_hw/pages/register_page.dart';
 
+import '../translations/locale_keys.g.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
+
 //
 //   @override
 //   Widget build(BuildContext context) {
@@ -27,17 +31,20 @@ class LoginPage extends StatelessWidget {
             alignment: Alignment.center,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-                  image: AssetImage('assets/images/background.jpg'),
-                  fit: BoxFit.cover,
-                )),
+              image: AssetImage('assets/images/background.jpg'),
+              fit: BoxFit.cover,
+            )),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Padding(
                   padding: EdgeInsets.all(7),
                   child: Text(
-                    'WELCOME!',
-                    style: TextStyle(fontSize: 35, color: Colors.purple, fontWeight: FontWeight.bold),
+                    LocaleKeys.welcome.tr(),
+                    style: TextStyle(
+                        fontSize: 35,
+                        color: Colors.purple,
+                        fontWeight: FontWeight.bold),
                   ),
                 ),
                 LoginBox()
@@ -47,7 +54,6 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-
 
 class LoginBox extends StatelessWidget {
   const LoginBox({Key? key}) : super(key: key);
@@ -65,47 +71,63 @@ class LoginBox extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(height: 30),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 25, top: 0, right: 25, bottom: 8),
             child: TextField(
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.mail),
                 border: OutlineInputBorder(),
-                hintText: 'Username / Email',
+                hintText: LocaleKeys.inputusername.tr(),
               ),
             ),
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 25, top: 0, right: 25, bottom: 8),
             child: TextField(
               decoration: InputDecoration(
                 prefixIcon: Icon(Icons.key),
                 border: OutlineInputBorder(),
-                hintText: 'Password',
+                hintText: LocaleKeys.inputpassword.tr(),
               ),
             ),
           ),
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
+                primary: Colors.purple,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),
                 ),
               ),
-              onPressed: () {},
-              child: const Text('Sign In'),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (context) => WelcomePage(),
+                ),
+                );
+              },
+              child: Text(LocaleKeys.buttonSign.tr()),
             ),
           ),
           Center(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Don't have an Account?"),
+                Text(LocaleKeys.noAcc.tr()),
                 TextButton(
+                  style: TextButton.styleFrom(
+                    primary: Colors.purple
+                  ),
                     onPressed: () {
-                      Navigator.pushNamed(context, '/register');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RegisterPage(),
+                        ),
+                      );
                     },
-                    child: const Text('Sign Up'))
+                    child: Text(LocaleKeys.buttonSubmit.tr()))
               ],
             ),
           )
@@ -114,4 +136,3 @@ class LoginBox extends StatelessWidget {
     );
   }
 }
-

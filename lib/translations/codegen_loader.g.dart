@@ -44,7 +44,7 @@ static const Map<String,dynamic> ru = {
   "buttonSubmit": "Зарегистрироваться",
   "haveacc": "Уже есть аккаунт?",
   "buttonSign": "Войти",
-  "welcome": "ДОБРО ПОЖАЛОВАТЬ!",
+  "welcome": "ПРИВЕТ!",
   "noAcc": "Нет аккаунта?"
 };
 static const Map<String, Map<String,dynamic>> mapLocales = {"en": en, "kk": kk, "ru": ru};
