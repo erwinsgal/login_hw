@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "664150782642",
+    "firebase_url": "https://login-hw-62aee-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "login-hw-62aee",
+    "storage_bucket": "login-hw-62aee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664150782642:android:d6848e7ffe84ce3be84fab",
+        "android_client_info": {
+          "package_name": "com.example.login_page_hw"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664150782642-6mcre6ch2hbu8edhk3iqmavoj4cphhge.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7nXJSCpPNq0_sqtiX12rj-jq7wAMqugA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664150782642-6mcre6ch2hbu8edhk3iqmavoj4cphhge.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

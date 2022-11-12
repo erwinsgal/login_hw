@@ -8,21 +8,6 @@ import '../translations/locale_keys.g.dart';
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
 
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       routes: {
-//         '/login': (context) => const FirstPage(),
-//         '/register': (context) => const SecondPage()
-//       },
-//     );
-//   }
-// }
-//
-// class FirstPage extends StatelessWidget {
-//   const FirstPage({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

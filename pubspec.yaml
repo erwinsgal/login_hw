@@ -38,7 +38,11 @@ dependencies:
   country_icons: ^2.0.2
   like_button: ^2.0.5
   qr_code_scanner: ^1.0.1
-
+  google_maps: ^6.2.0
+  http: ^0.13.5
+  google_maps_flutter: ^2.2.1
+  flutter_local_notifications: ^12.0.3
+  firebase_messaging: ^14.1.0
 
 
 
