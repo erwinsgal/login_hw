@@ -16,7 +16,7 @@ class WelcomePage extends StatefulWidget {
 
 class _WelcomePageState extends State<WelcomePage> {
   int _currentIndex = 0;
-  List pages = const [
+  List pages = [
     HomePage(),
     QRpage(),
     MapPage(),
