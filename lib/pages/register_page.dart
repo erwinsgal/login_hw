@@ -129,14 +129,16 @@ class RegisterBox extends StatelessWidget {
           ),
           Center(
             child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                primary: Colors.purple,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                ),
-              ),
-              onPressed: _submitForm,
-              child: Text(LocaleKeys.buttonSubmit.tr()),
+              onPressed: (){
+                _submitForm();
+                Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LoginPage(),
+                              ));
+
+              },
+                child: Text(LocaleKeys.buttonSubmit.tr())
             ),
           ),
           Center(
@@ -176,20 +178,6 @@ class RegisterBox extends StatelessWidget {
     }
   }
 
-  //
-  // void _submitForm() {
-  //     _formKey.currentState!.save();
-  //     _showDialog(name: _nameController.text);
-  //     log('Name: ${_nameController.text}');
-  //     log('Phone: ${_phoneController.text}');
-  //     log('Email: ${_emailController.text}');
-  //     log('Country: $_selectedCountry');
-  //     log('Story: ${_storyController.text}');
-  //   } else {
-  //     _showMessage(message: 'Form is not valid! Please review and correct');
-  //   }
-  // }
-
   String? validateName(String? value) {
     final nameExp = RegExp(r'^[A-Za-z ]+$');
     if (value == null) {
@@ -225,66 +213,5 @@ class RegisterBox extends StatelessWidget {
       return null;
     }
   }
-//
-// void _showMessage({required String message}) {
-//   ScaffoldMessenger.of(context).showSnackBar(
-//     SnackBar(
-//       duration: const Duration(seconds: 1),
-//       backgroundColor: Colors.red,
-//       content: Text(
-//         message,
-//         style: const TextStyle(
-//           color: Colors.white,
-//           fontWeight: FontWeight.w600,
-//           fontSize: 18.0,
-//         ),
-//       ),
-//     ),
-//   );
-//
-//   void _showDialog({required String name}) {
-//     showDialog(
-//       context: context,
-//       builder: (context) {
-//         return AlertDialog(
-//           title: const Text(
-//             'Registration successful',
-//             style: TextStyle(
-//               color: Colors.green,
-//             ),
-//           ),
-//           content: Text(
-//             '$name is now a verified register form',
-//             style: const TextStyle(
-//               fontWeight: FontWeight.w700,
-//               fontSize: 18.0,
-//             ),
-//           ),
-//           actions: [
-//             TextButton(
-//               onPressed: () {
-//                 Navigator.pop(context);
-//                 Navigator.push(
-//                   context,
-//                   MaterialPageRoute(
-//                     builder: (context) =>
-//                         UserInfoPage(
-//                           userInfo: newUser,
-//                         ),
-//                   ),
-//                 );
-//               },
-//               child: const Text(
-//                 'Verified',
-//                 style: TextStyle(
-//                   color: Colors.green,
-//                   fontSize: 18.0,
-//                 ),
-//               ),
-//             ),
-//           ],
-//         );
-//       },
-//     );
-//   }
+
 }

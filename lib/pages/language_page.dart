@@ -3,9 +3,11 @@ import 'dart:developer';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_page_hw/pages/login_page.dart';
 import 'package:login_page_hw/pages/register_page.dart';
 
+import '../bloc/app_bloc.dart';
 import '../model/user.dart';
 
 class LanguagePage extends StatefulWidget {
@@ -16,6 +18,14 @@ class LanguagePage extends StatefulWidget {
 }
 
 class _LanguagePage extends State<LanguagePage> {
+  late AppBloc appBloc;
+
+  @override
+  void initState() {
+    appBloc = BlocProvider.of<AppBloc>(context);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style = ElevatedButton.styleFrom(
@@ -39,6 +49,8 @@ class _LanguagePage extends State<LanguagePage> {
                     style: style,
                     onPressed: () async {
                       await context.setLocale(Locale('ru'));
+                      appBloc.add(AppStartedEvent());
+
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -58,6 +70,7 @@ class _LanguagePage extends State<LanguagePage> {
                     style: style,
                     onPressed: () async {
                       await context.setLocale(Locale('kk'));
+                      appBloc.add(AppStartedEvent());
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -77,6 +90,7 @@ class _LanguagePage extends State<LanguagePage> {
                     style: style,
                     onPressed: () async {
                       await context.setLocale(Locale('en'));
+                      appBloc.add(AppStartedEvent());
                       Navigator.push(
                         context,
                         MaterialPageRoute(
