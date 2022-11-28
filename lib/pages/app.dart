@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:registration_ui/features/app/bloc/app_bloc.dart';
-import 'package:registration_ui/features/app/ui/pages/choose_lang.dart';
-import 'package:registration_ui/features/app/ui/pages/registration_page.dart';
-import 'package:login_page_hw/pages/main_page';
+import 'package:login_page_hw/bloc/app_bloc.dart';
+import 'package:login_page_hw/pages/language_page.dart';
+import 'package:login_page_hw/pages/register_page.dart';
+import 'package:login_page_hw/pages/main_page.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -39,8 +39,8 @@ class _AppState extends State<App> {
         home: BlocConsumer(
           bloc: appBloc,
           builder: (context, state) {
-            if (state is UnAuthAppState) return RegistrationPage();
-            if (state is LocaleInitAppState) return ChooseLang();
+            if (state is UnAuthAppState) return RegisterPage();
+            if (state is LocaleInitAppState) return LanguagePage();
             if (state is AuthAppState) return WelcomePage();
             return Container();
           },
