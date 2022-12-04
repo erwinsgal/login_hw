@@ -13,7 +13,7 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Lottie.asset('assets/images/127305-like-a-boss-lolo.json')
+      child: Lottie.asset('assets/animation/127305-like-a-boss-lolo.json')
     );
   }
 }

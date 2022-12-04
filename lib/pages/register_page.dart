@@ -19,7 +19,7 @@ class RegisterPage extends StatelessWidget {
             alignment: Alignment.center,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/background.jpg'),
+                  image: AssetImage('assets/bg/bg.jpg'),
               fit: BoxFit.cover,
             )),
             child: Column(
@@ -87,7 +87,6 @@ class RegisterBox extends StatelessWidget {
       child: ListView(
         key: _formKey,
         children: [
-          const SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.only(left: 25, top: 0, right: 25, bottom: 8),
             child: TextFormField(

@@ -49,6 +49,10 @@ dependencies:
   shared_preferences: ^2.0.15
   dio: ^4.0.6
   lottie: ^1.1.0
+  retrofit: ^3.0.1+1
+  flutter_launcher_icons: ^0.11.0
+
+
 
 
 
@@ -57,6 +61,8 @@ dev_dependencies:
     sdk: flutter
   json_serializable: ^6.3.1
   build_runner: ^2.2.1
+  retrofit_generator: ^4.0.3+1
+
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -77,10 +83,17 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/ic_launcher.png"
+
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/images/
+    - assets/bg/
     - assets/translations/
+    - assets/icon/
+    - assets/animation/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

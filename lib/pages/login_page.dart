@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
             alignment: Alignment.center,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/background.jpg'),
+              image: AssetImage('assets/bg/bg.jpg'),
               fit: BoxFit.cover,
             )),
             child: Column(

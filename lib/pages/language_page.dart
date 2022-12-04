@@ -22,14 +22,14 @@ class _LanguagePage extends State<LanguagePage> {
 
   @override
   void initState() {
-    appBloc = BlocProvider.of<AppBloc>(context);
+    appBloc = AppBloc();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style = ElevatedButton.styleFrom(
-        minimumSize: const Size(150, 70),
+        minimumSize: Size(150, 90),
         primary: Colors.white,
         textStyle: const TextStyle(
             fontSize: 20, color: Colors.purple, fontWeight: FontWeight.w400));
@@ -39,7 +39,7 @@ class _LanguagePage extends State<LanguagePage> {
             alignment: Alignment.center,
             decoration: const BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage('assets/images/background.jpg'),
+                  image: AssetImage('assets/bg/bg.jpg'),
               fit: BoxFit.cover,
             )),
             child: Column(
@@ -50,7 +50,6 @@ class _LanguagePage extends State<LanguagePage> {
                     onPressed: () async {
                       await context.setLocale(Locale('ru'));
                       appBloc.add(AppStartedEvent());
-
                       Navigator.push(
                         context,
                         MaterialPageRoute(
