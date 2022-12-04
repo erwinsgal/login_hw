@@ -60,7 +60,7 @@ class _MainPageState extends State<MainPage> {
             label: 'Map',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.animation),
+            icon: Icon(Icons.animation_outlined),
             activeIcon: Icon(Icons.animation),
             label: 'Animation',
           ),

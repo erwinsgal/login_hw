@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_page_hw/bloc/app_bloc.dart';
 import 'package:login_page_hw/pages/language_page.dart';
 import 'package:login_page_hw/pages/register_page.dart';
-import 'package:login_page_hw/pages/main_page.dart';
+import 'package:login_page_hw/pages/navbar.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -41,7 +41,7 @@ class _AppState extends State<App> {
           builder: (context, state) {
             if (state is UnAuthAppState) return RegisterPage();
             if (state is LocaleInitAppState) return LanguagePage();
-            if (state is AuthAppState) return WelcomePage();
+            if (state is AuthAppState) return MainPage();
             return Container();
           },
           listener: (context, state) {

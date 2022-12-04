@@ -5,10 +5,8 @@ final sharedPreference = SharedPreferencesHelper();
 class SharedPreferencesHelper {
   late SharedPreferences _sharedPreferences;
   static const String USER_NAME = "userName";
-  static const String USER_EMAIL = "userEmail";
   static const String USER_PHONE = "userPhone";
   static const String USER_PASSWORD = "userPassword";
-  static const String USER_FULLNAME = "userFullname";
   static const String AUTH_STATUS = "authStatus";
 
 
@@ -18,7 +16,7 @@ class SharedPreferencesHelper {
   Future<bool> get authStatus async {
     return _sharedPreferences.getBool(AUTH_STATUS) ?? false;
   }
-  void saveAuthStatus(bool value){
+  void saveAuthStatus(bool value) async{
     _sharedPreferences.setBool(AUTH_STATUS, value);
   }
 

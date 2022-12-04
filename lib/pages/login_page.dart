@@ -1,6 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:login_page_hw/pages/main_page.dart';
+import 'package:login_page_hw/pages/navbar.dart';
 import 'package:login_page_hw/pages/register_page.dart';
 
 import '../translations/locale_keys.g.dart';
@@ -88,7 +88,7 @@ class LoginBox extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                    builder: (context) => WelcomePage(),
+                    builder: (context) => MainPage(),
                 ),
                 );
               },

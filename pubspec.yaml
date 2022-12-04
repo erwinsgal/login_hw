@@ -51,6 +51,7 @@ dependencies:
   lottie: ^1.1.0
   retrofit: ^3.0.1+1
   flutter_launcher_icons: ^0.11.0
+  flutter_polyline_points: ^1.0.0
 
 
 
@@ -83,17 +84,18 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-flutter_icons:
-  android: "launcher_icon"
-  ios: true
-  image_path: "assets/icon/ic_launcher.png"
-
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/bg/
     - assets/translations/
     - assets/icon/
     - assets/animation/
+
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon/ic_launcher.png"
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

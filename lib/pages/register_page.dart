@@ -3,7 +3,7 @@ import 'dart:convert';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:login_page_hw/pages/login_page.dart';
-import 'package:login_page_hw/pages/main_page.dart';
+import 'package:login_page_hw/pages/navbar.dart';
 import 'package:login_page_hw/model/user.dart';
 import '../translations/locale_keys.g.dart';
 import 'package:http/http.dart' as http;
@@ -133,7 +133,7 @@ class RegisterBox extends StatelessWidget {
                 Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LoginPage(),
+                                builder: (context) => MainPage(),
                               ));
 
               },
