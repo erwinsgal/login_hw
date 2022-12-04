@@ -28,7 +28,7 @@ class MapPageState extends State<MapPage> {
   int _polylineIdCounter = 1;
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(43.242243, 7             6.949704),
+    target: LatLng(43.242243, 76.949704),
     zoom: 15,
   );
 
