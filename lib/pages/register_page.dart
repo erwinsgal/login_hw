@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:login_page_hw/pages/login_page.dart';
 import 'package:login_page_hw/pages/navbar.dart';
 import 'package:login_page_hw/model/user.dart';
+import '../services/shared_preference.dart';
 import '../translations/locale_keys.g.dart';
 import 'package:http/http.dart' as http;
 
@@ -35,6 +36,7 @@ class RegisterPage extends StatelessWidget {
                         fontWeight: FontWeight.bold),
                   ),
                 ),
+
                 RegisterBox()
               ],
             )),
@@ -123,7 +125,7 @@ class RegisterBox extends StatelessWidget {
                 border: OutlineInputBorder(),
                 hintText: LocaleKeys.inputpassword.tr(),
               ),
-              validator: _validatePassword,
+              // validator: _validatePassword,
             ),
           ),
           Center(
@@ -173,7 +175,12 @@ class RegisterBox extends StatelessWidget {
             'name': _nameController.text,
             'phone': _phoneController.text,
             'password': _passController.text,
-          }));
+          })).then((response) {
+        print(json.decode(response.body));
+        // String userName = json.decode(response.body)['name'];
+        sharedPreference.saveUserName(_nameController.text);
+      });
+    };
     }
   }
 
@@ -189,28 +196,28 @@ class RegisterBox extends StatelessWidget {
   }
 
   bool validatePhoneNumber(String input) {
-    final phoneExp = RegExp(r'^\(\d\d\d\)\d\d\d\-\d\d\d\d$');
+    final phoneExp = RegExp(r'^\(\d\d\d\)\d\d\d\d\d\d\d$');
     return phoneExp.hasMatch(input);
   }
-
-  String? validateEmail(String? value) {
-    if (value == null) {
-      return 'Email cannot be empty';
-    } else if (!_emailController.text.contains('@')) {
-      return 'Invalid email address';
-    } else {
-      return null;
-    }
-  }
-
-  String? _validatePassword(String? value) {
-    if (_passController.text.length != 8) {
-      return '8 character required for password';
-    } else if (_confirmPassController.text != _passController.text) {
-      return 'Password does not match';
-    } else {
-      return null;
-    }
-  }
-
-}
+//
+//   String? validateEmail(String? value) {
+//     if (value == null) {
+//       return 'Email cannot be empty';
+//     } else if (!_emailController.text.contains('@')) {
+//       return 'Invalid email address';
+//     } else {
+//       return null;
+//     }
+//   }
+//
+//   String? _validatePassword(String? value) {
+//     if (_passController.text.length != 8) {
+//       return '8 character required for password';
+//     } else if (_confirmPassController.text != _passController.text) {
+//       return 'Password does not match';
+//     } else {
+//       return null;
+//     }
+//   }
+//
+// }

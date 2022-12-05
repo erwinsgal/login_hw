@@ -28,7 +28,7 @@ class MapPageState extends State<MapPage> {
   int _polylineIdCounter = 1;
 
   static final CameraPosition _kGooglePlex = CameraPosition(
-    target: LatLng(43.242243, 76.949704),
+    target: LatLng(43.34374, 76.90425),
     zoom: 15,
   );
 
@@ -37,7 +37,7 @@ class MapPageState extends State<MapPage> {
   void initState(){
     super.initState();
 
-    _setMarker(LatLng(43.242243, 76.949704));
+    _setMarker(LatLng(43.34374, 76.90425));
   }
   void _setMarker(LatLng point){
     setState(() {
@@ -72,7 +72,7 @@ class MapPageState extends State<MapPage> {
       Polyline(polylineId:
       PolylineId(polylineIdVal),
         width: 2,
-        color: Colors.purple,
+        color: Colors.red,
         points: points.map(
               (point)=> LatLng(point.latitude, point.longitude),
         )
@@ -83,7 +83,7 @@ class MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
+    return Scaffold(
       body: Column(
         children: [
           Row(
@@ -93,15 +93,14 @@ class MapPageState extends State<MapPage> {
                   children: [
                     TextFormField(
                       controller: _originController,
-                      decoration: InputDecoration(hintText: 'Origin'),
+                      decoration: InputDecoration(hintText: '1 пункт'),
                       onChanged: (value) {
                         print(value);
                       },
                     ),
-
                     TextFormField(
                       controller: _destinationController,
-                      decoration: InputDecoration(hintText: 'Destination'),
+                      decoration: InputDecoration(hintText: '2 пункт'),
                       onChanged: (value) {
                         print(value);
                       },
@@ -129,7 +128,7 @@ class MapPageState extends State<MapPage> {
 
           Expanded(
             child: GoogleMap(
-              mapType: MapType.normal,
+              mapType: MapType.satellite,
               markers: _markers,
               polygons: _polygons,
               polylines: _polylines,

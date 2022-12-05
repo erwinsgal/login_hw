@@ -13,6 +13,7 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   late ProfileBloc profileBloc;
   Profile? profile;
+
   String? userName = sharedPreference.getUserName;
 
   @override
